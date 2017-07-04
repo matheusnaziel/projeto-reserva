@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="35px" viewBox="0 0 28 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-troca</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-troca" fill="#444444">
+            <path d="M0.956712267,9.03978415 L0,6 C7.7319865,6 14,12.125557 14,19.6818144 C14,24.3872384 11.5693974,28.5378671 7.86825824,31 L6.91968853,27.9860874 C9.4756041,25.976891 11,22.9533608 11,19.6818144 C11,14.1095044 6.59640228,9.51101641 0.956712267,9.03978415 Z" id="Oval-3-Copy-2" fill-rule="nonzero" transform="translate(7.000000, 18.500000) rotate(-180.000000) translate(-7.000000, -18.500000) "></path>
+            <polygon id="Rectangle-5" transform="translate(12.500000, 29.500000) rotate(-45.000000) translate(-12.500000, -29.500000) " points="16 26 16 33 9 33"></polygon>
+            <path d="M14.9585593,7.03995957 L14,4 C21.7319865,4 28,10.127963 28,17.6871885 C28,22.3882109 25.5758473,26.5356929 21.8829935,29 L20.9324814,25.9855611 C23.4808155,23.975212 25,20.9548629 25,17.6871885 C25,12.1124324 20.5971524,7.51227006 14.9585593,7.03995957 Z" id="Oval-3-Copy-2" fill-rule="nonzero"></path>
+            <polygon id="Rectangle-5" transform="translate(15.500000, 5.500000) rotate(-225.000000) translate(-15.500000, -5.500000) " points="19 2 19 9 12 9"></polygon>
+        </g>
+    </g>
+</svg>

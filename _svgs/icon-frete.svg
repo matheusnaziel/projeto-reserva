@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="28px" viewBox="0 0 64 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-frete</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-frete" fill-rule="nonzero" fill="#444444">
+            <polygon id="Line" points="2 2 49 2 49 0 2 0"></polygon>
+            <polygon id="Line-Copy-2" points="30 24 51 24 51 22 30 22"></polygon>
+            <polygon id="Line-Copy-14" points="52 16 63 16 63 14 52 14"></polygon>
+            <polygon id="Line-Copy-11" points="47 5 58 5 58 3 47 3"></polygon>
+            <polygon id="Line-Copy-12" points="57 3.84382078 62.3246972 14 64 13.1561792 58.6753028 3"></polygon>
+            <polygon id="Line-Copy-9" points="60 24 64 24 64 22 60 22"></polygon>
+            <polygon id="Line-Copy-3" points="4 24 22 24 22 22 4 22"></polygon>
+            <polygon id="Line-Copy-6" points="5 16 13 16 13 14 5 14"></polygon>
+            <polygon id="Line-Copy-7" points="5 9 13 9 13 7 5 7"></polygon>
+            <polygon id="Line-Copy-8" points="0.980392175 9 3.01960782 9 4 9 4 7 0 7 1.16101756e-15 9"></polygon>
+            <polygon id="Line-Copy-5" points="0 24 2 24 2 22 0 22"></polygon>
+            <polygon id="Line" points="62 13 62 22 64 22 64 13"></polygon>
+            <polygon id="Line-Copy-4" points="12 0 12 23 14 23 14 2.87688603e-16"></polygon>
+            <polygon id="Line-Copy-10" points="46 0 46 23 48 23 48 0"></polygon>
+            <polygon id="Line-Copy-13" points="52 3 52 15 54 15 54 3"></polygon>
+            <path d="M25.5,28 C22.4624339,28 20,25.5375661 20,22.5 C20,19.4624339 22.4624339,17 25.5,17 C28.5375661,17 31,19.4624339 31,22.5 C31,25.5375661 28.5375661,28 25.5,28 Z M25.5,26.0588235 C27.465484,26.0588235 29.0588235,24.465484 29.0588235,22.5 C29.0588235,20.534516 27.465484,18.9411765 25.5,18.9411765 C23.534516,18.9411765 21.9411765,20.534516 21.9411765,22.5 C21.9411765,24.465484 23.534516,26.0588235 25.5,26.0588235 Z" id="Oval-2"></path>
+            <path d="M55.5,28 C52.4624339,28 50,25.5375661 50,22.5 C50,19.4624339 52.4624339,17 55.5,17 C58.5375661,17 61,19.4624339 61,22.5 C61,25.5375661 58.5375661,28 55.5,28 Z M55.5,26.0588235 C57.465484,26.0588235 59.0588235,24.465484 59.0588235,22.5 C59.0588235,20.534516 57.465484,18.9411765 55.5,18.9411765 C53.534516,18.9411765 51.9411765,20.534516 51.9411765,22.5 C51.9411765,24.465484 53.534516,26.0588235 55.5,26.0588235 Z" id="Oval-2-Copy"></path>
+        </g>
+    </g>
+</svg>
