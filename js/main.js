@@ -29,7 +29,7 @@ App.Application = (function() {
   Application.fn.sendSequest = function(email) {
     var _self = this;
     this.state.mail = email;
-    var RECSYS_URL = 'http://34.207.202.190:3000/recapi/v1/rec/' + email;
+    var RECSYS_URL = 'https://reservapto.com.br:3000/recapi/v1/rec/' + email;
     var xhttp = new XMLHttpRequest();
 
     xhttp.open('GET', RECSYS_URL, true);
