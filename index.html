@@ -606,6 +606,12 @@
 </header>
 
 <!-- PAGINA - START -->
+<!--
+
+//***
+//	sessão com imagem do usuário
+//***
+
 <section class="mz-section-0">
 	<div class="mz-containerout">
 		<div class="mz-content-first">
@@ -619,21 +625,13 @@
 			<p class="text-header-last">confira diversos produtos recomendados pra você.</p>
 		</div>
 	</div>	
-</section>
+</section> -->
 
-<section class="mz-section-0 header-2">
-	<div class="mz-containerout">
-		<div class="mz-content-first">
-			<div class="mz-text-1">
-				<h2 class="mz-text-header">OLÁ<br>JOSÉ ALBERTO</h2>
-				<p class="mz-first-paragraph">Montamos essa página com sugestões<br>de produtos baseados em sua navegação.</p>
-			</div>
-		</div>
-		<div class="mz-content-last">
-			<p class="text-header-last">confira diversos produtos recomendados pra você.</p>
-		</div>
-	</div>	
-</section>
+<!--
+
+//***
+//	sessão com botão copy cupom
+//***
 
 <section class="mz-section-0 header-2 header-withButton">
 	<div class="mz-containerout">
@@ -646,6 +644,20 @@
 				    <span class="cupom-cody">1A-VEZ-OP13</span>
 					<p>Clique aqui para copiar</p>
 				</button>
+			</div>
+		</div>
+		<div class="mz-content-last">
+			<p class="text-header-last">confira diversos produtos recomendados pra você.</p>
+		</div>
+	</div>	
+</section> -->
+
+<section id="hero" class="mz-section-0 header-2">
+	<div class="mz-containerout">
+		<div class="mz-content-first">
+			<div class="mz-text-1">
+				<h2 class="mz-text-header">OLÁ<br>{{ mail }}</h2>
+				<p class="mz-first-paragraph">Montamos essa página com sugestões<br>de produtos baseados em sua navegação.</p>
 			</div>
 		</div>
 		<div class="mz-content-last">
@@ -699,266 +711,69 @@
 	</div>
 </section>
 
-<section class="mz-section--slider__combinar">
+<section id="combinar" class="mz-section--slider__combinar">
 	<div class="mz-slider--wrapper--title">
 		<div class="mz-containerout mz-containerout--flex">
 			<div class="mz-text-3-left">
-				<h2>Para combinar</h2>	
+				<h2>{{ sectionTitle }}</h2>
 				<p>Baseado nos últimos<br>produtos que você comprou</p>
 			</div>
 			<div class="button-1-right">
 				<button>
-					<a href="#">Ver mais</a>
+					<a :href="sectionUrl">Ver mais</a>
 				</button>	
 			</div>
 		</div>
 	</div>
 	<div class="mz-slider--wrapper">
 		<span class="mz-bgSlider-next mz-bgSlider-next--combinar"></span>
-	    <span class="mz-bgSlider-prev mz-bgSlider-next--combinar"></span>
-
+    <span class="mz-bgSlider-prev mz-bgSlider-next--combinar"></span>
 
 		<div class="swiper-container swiper-container--combinar">
-        	<div class="swiper-wrapper">
+      	<div class="swiper-wrapper">
+					
+					<!-- NESSA PARTE DO VUE TEMOS UM PEQUENO DETALHE NOS ATRIBUTOS: v-for="data in section" -->
+					<!-- MAIS DETALHES: https://vuejs.org/v2/guide/#Conditionals-and-Loops -->
+      		<div class="swiper-slide" v-for="data in section">
+    				<a :href="data.productUrl">
+            	<div class="mz-slider--content">
+            		<div class="mz-slider--content__image">
+            			<img :src="data.produtoImage"/>
+            		</div>
+            		<div class="mz-slider--content__description">
+            			<div class="mz-slider--content__description--top">
+            				<h5>{{ data.productTitle }}</h5>
+            			</div>
+            			<div class="mz-slider--content__description--bottom">
+            				<span class="mz-atom--price">
+            					<span class="mz-atom--price__value">R$ {{ data.productPrice }}.00</span>
+	            				<span class="mz-atom--price__pipe">|</span>
+	            				<span class="mz-atom--price__desc">4x R$ {{ data.productPriceWithOption }}.00</span>
+            				</span>
+            			</div>
+            		</div>
+            	</div>
+    				</a>
+          </div>
 
-        		<div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
+      	</div>
+    </div>
 
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-        	</div>
-        </div>
-
-	    <div class="swiper-button-next"></div>
-	    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
 	</div>
 </section>
 
-<section class="mz-section--slider__ultimos">
+<section id="ultimos" class="mz-section--slider__ultimos">
 	<div class="mz-slider--wrapper--title">
 		<div class="mz-containerout mz-containerout--flex">
 			<div class="mz-text-3-left">
-				<h2>ÚLTIMOS VISTOS</h2>	
+				<h2>{{ sectionTitle }}</h2>
 				<p>Produtos que você<br>está de olho.</p>
 			</div>
 			<div class="button-1-right">
 				<button>
-					<a href="#">Ver mais</a>
+					<a :href="sectionUrl">Ver mais</a>
 				</button>	
 			</div>
 		</div>
@@ -971,225 +786,27 @@
 		<div class="swiper-container swiper-container--ultimos">
         	<div class="swiper-wrapper">
 
-        		<div class="swiper-slide">
+        		<div class="swiper-slide" v-for="data in section">
+            	<a :href="data.productUrl">
 	            	<div class="mz-slider--content">
 	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
+	            			<img :src="data.produtoImage"/>
 	            		</div>
 	            		<div class="mz-slider--content__description">
 	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
+	            				<h5>{{ data.productTitle }}</h5>
 	            			</div>
 	            			<div class="mz-slider--content__description--bottom">
 	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
+	            					<span class="mz-atom--price__value">R$ {{ data.productPrice }}.00</span>
 		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
+		            				<span class="mz-atom--price__desc">4x R$ {{ data.productPriceWithOption }}.00</span>
 	            				</span>
 	            			</div>
 	            		</div>
 	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
+	    				</a>
+            </div>
 
         	</div>
         </div>
@@ -1216,7 +833,7 @@
         		<div class="swiper-slide">
 	            	<div class="mz-slider--content">
 	            		<div class="mz-slider--content__image">
-	            			<a href="#"><img src="_images/categorias/1-calcados.svg"/></a>
+	            			<a href="javascript:void(0);"><img src="_images/categorias/1-calcados.svg"/></a>
 	            		</div>
 	            		<div class="mz-slider--content__description">
 	            			<div class="mz-slider--content__description--top">
@@ -1230,7 +847,7 @@
 	            <div class="swiper-slide">
 	            	<div class="mz-slider--content">
 	            		<div class="mz-slider--content__image">
-	            		<a href="#"><img src="_images/categorias/2-camisetas.svg"/></a>	
+	            		<a href="javascript:void(0);"><img src="_images/categorias/2-camisetas.svg"/></a>	
 	            		</div>
 	            		<div class="mz-slider--content__description">
 	            			<div class="mz-slider--content__description--top">
@@ -1244,7 +861,7 @@
 	            <div class="swiper-slide">
 	            	<div class="mz-slider--content">
 	            		<div class="mz-slider--content__image">
-	            			<a href="#"><img src="_images/categorias/3-polos.svg"/></a>
+	            			<a href="javascript:void(0);"><img src="_images/categorias/3-polos.svg"/></a>
 	            		</div>
 	            		<div class="mz-slider--content__description">
 	            			<div class="mz-slider--content__description--top">
@@ -1258,7 +875,7 @@
 	            <div class="swiper-slide">
 	            	<div class="mz-slider--content">
 	            		<div class="mz-slider--content__image">
-	            			<a href="#"><img src="_images/categorias/4-camisas.svg"/></a>
+	            			<a href="javascript:void(0);"><img src="_images/categorias/4-camisas.svg"/></a>
 	            		</div>
 	            		<div class="mz-slider--content__description">
 	            			<div class="mz-slider--content__description--top">
@@ -1272,7 +889,7 @@
 	            <div class="swiper-slide">
 	            	<div class="mz-slider--content">
 	            		<div class="mz-slider--content__image">
-	            			<a href="#"><img src="_images/categorias/5-calcas.svg"/></a>
+	            			<a href="javascript:void(0);"><img src="_images/categorias/5-calcas.svg"/></a>
 	            		</div>
 	            		<div class="mz-slider--content__description">
 	            			<div class="mz-slider--content__description--top">
@@ -1286,7 +903,7 @@
 	            <div class="swiper-slide">
 	            	<div class="mz-slider--content">
 	            		<div class="mz-slider--content__image">
-	            			<a href="#"><img src="_images/categorias/6-casacos.svg"/></a>
+	            			<a href="javascript:void(0);"><img src="_images/categorias/6-casacos.svg"/></a>
 	            		</div>
 	            		<div class="mz-slider--content__description">
 	            			<div class="mz-slider--content__description--top">
@@ -1300,7 +917,7 @@
 	            <div class="swiper-slide">
 	            	<div class="mz-slider--content">
 	            		<div class="mz-slider--content__image">
-	            			<a href="#"><img src="_images/categorias/7-bermudas.svg"/></a>
+	            			<a href="javascript:void(0);"><img src="_images/categorias/7-bermudas.svg"/></a>
 	            		</div>
 	            		<div class="mz-slider--content__description">
 	            			<div class="mz-slider--content__description--top">
@@ -1314,7 +931,7 @@
 	            <div class="swiper-slide">
 	            	<div class="mz-slider--content">
 	            		<div class="mz-slider--content__image">
-	            			<a href="#"><img src="_images/categorias/8-acessorios.svg"/></a>
+	            			<a href="javascript:void(0);"><img src="_images/categorias/8-acessorios.svg"/></a>
 	            		</div>
 	            		<div class="mz-slider--content__description">
 	            			<div class="mz-slider--content__description--top">
@@ -1333,16 +950,16 @@
 	</div>
 </section>
 
-<section class="mz-section--slider__polos">
+<section id="polos" class="mz-section--slider__polos">
 	<div class="mz-slider--wrapper--title">
 		<div class="mz-containerout mz-containerout--flex">
 			<div class="mz-text-3-left">
-				<h2>POLOS</h2>	
+				<h2>{{ sectionTitle }}</h2>
 				<p>Você demonstrou interesse<br>nessa categoria.</p>
 			</div>
 			<div class="button-1-right">
 				<button>
-					<a href="#">Ver mais polos</a>
+					<a :href="sectionUrl">Ver mais</a>
 				</button>	
 			</div>
 		</div>
@@ -1355,225 +972,27 @@
 		<div class="swiper-container swiper-container--polos">
         	<div class="swiper-wrapper">
 
-        		<div class="swiper-slide">
+        		<div class="swiper-slide" v-for="data in section">
+            	<a :href="data.productUrl">
 	            	<div class="mz-slider--content">
 	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
+	            			<img :src="data.produtoImage"/>
 	            		</div>
 	            		<div class="mz-slider--content__description">
 	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
+	            				<h5>{{ data.productTitle }}</h5>
 	            			</div>
 	            			<div class="mz-slider--content__description--bottom">
 	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
+	            					<span class="mz-atom--price__value">R$ {{ data.productPrice }}.00</span>
 		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
+		            				<span class="mz-atom--price__desc">4x R$ {{ data.productPriceWithOption }}.00</span>
 	            				</span>
 	            			</div>
 	            		</div>
 	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
+	    				</a>
+            </div>
 
         	</div>
         </div>
@@ -1583,16 +1002,16 @@
 	</div>
 </section>
 
-<section class="mz-section--slider__camisetas">
+<section id="camisetas" class="mz-section--slider__camisetas">
 	<div class="mz-slider--wrapper--title">
 		<div class="mz-containerout mz-containerout--flex">
 			<div class="mz-text-3-left">
-				<h2>CAMISETAS</h2>	
+				<h2>{{ sectionTitle }}</h2>
 				<p>Você demonstrou interesse<br>nessa categoria.</p>
 			</div>
 			<div class="button-1-right">
 				<button>
-					<a href="#">Ver mais camisetas</a>
+					<a :href="sectionUrl">Ver mais</a>
 				</button>	
 			</div>
 		</div>
@@ -1605,225 +1024,27 @@
 		<div class="swiper-container swiper-container--camisetas">
         	<div class="swiper-wrapper">
 
-        		<div class="swiper-slide">
+        		<div class="swiper-slide" v-for="data in section">
+            	<a :href="data.productUrl">
 	            	<div class="mz-slider--content">
 	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
+	            			<img :src="data.produtoImage"/>
 	            		</div>
 	            		<div class="mz-slider--content__description">
 	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
+	            				<h5>{{ data.productTitle }}</h5>
 	            			</div>
 	            			<div class="mz-slider--content__description--bottom">
 	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
+	            					<span class="mz-atom--price__value">R$ {{ data.productPrice }}.00</span>
 		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
+		            				<span class="mz-atom--price__desc">4x R$ {{ data.productPriceWithOption }}.00</span>
 	            				</span>
 	            			</div>
 	            		</div>
 	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
-
-	            <div class="swiper-slide">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img src="_images/bitmap-image-1.png"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>Camisa Polo Preta</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ 299.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ 74,65</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
+	    				</a>
+            </div>
 
         	</div>
         </div>
@@ -1839,63 +1060,15 @@
 	</div>
 </a>
 
-<script src="js/clipboard.min.js"></script>
+<!-- LIBS E FRAMEWORKS ---- START -->
+<!-- <script src="js/clipboard.min.js"></script> --><!-- O SCRIPT CLIPBOARD SÓ ESTÁ SENDO USADO NA SECTION COM A CLASSE: header-withButton -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
 <script src="js/swiper.min.js"></script>
-<script>
-var clipboard = new Clipboard('.cupom-button');
+<script src="js/vue.min.js"></script>
+<!-- LIBS E FRAMEWORKS ---- END -->
 
-clipboard.on('success', function(e) {
-    console.info('Action:', e.action);
-    console.info('Text:', e.text);
-    console.info('Trigger:', e.trigger);
-
-    e.clearSelection();
-});
-
-var swiper = new Swiper('.swiper-container--combinar', {
-	slidesPerView: 6,
-    paginationClickable: true,
-    nextButton: '.mz-bgSlider-next--combinar',
-    prevButton: '.mz-bgSlider-prev--combinar',
-	loop: true,
-    spaceBetween: 30
-});
-
-var swiper = new Swiper('.swiper-container--ultimos', {
-	slidesPerView: 6,
-    paginationClickable: true,
-    nextButton: '.mz-bgSlider-next--ultimos',
-    prevButton: '.mz-bgSlider-prev--ultimos',
-	loop: true,
-    spaceBetween: 30
-});
-
-var swiper = new Swiper('.swiper-container--categorias', {
-	slidesPerView: 6,
-    paginationClickable: true,
-    nextButton: '.mz-bgSlider-next--categorias',
-    prevButton: '.mz-bgSlider-prev--categorias',
-	loop: true,
-    spaceBetween: 30
-});
-
-var swiper = new Swiper('.swiper-container--polos', {
-	slidesPerView: 6,
-    paginationClickable: true,
-    nextButton: '.mz-bgSlider-next--polos',
-    prevButton: '.mz-bgSlider-prev--polos',
-	loop: true,
-    spaceBetween: 30
-});
-
-var swiper = new Swiper('.swiper-container--camisetas', {
-	slidesPerView: 6,
-    paginationClickable: true,
-    nextButton: '.mz-bgSlider-next--camisetas',
-    prevButton: '.mz-bgSlider-prev--camisetas',
-	loop: true,
-    spaceBetween: 30
-});
-</script>
+<!-- APPLICATION CODE -->
+<script src="js/main.js"></script>
 </body>
 </html>
