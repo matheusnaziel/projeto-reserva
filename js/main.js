@@ -2,7 +2,7 @@ var App = {};
 
 $(function(){
   var app = new App.Application(document.body);
-  app.run();
+  app.run();  
 });
 
 App.Application = (function() {
@@ -22,8 +22,21 @@ App.Application = (function() {
       this.sendSequest('lucasaborges@hotmail.com');
       this.initSliderCategory();
       this.insertContentHero();
+      this.anchorHero();
 
-      this.initClipboard();
+      // this.initClipboard();
+  };
+
+  Application.fn.anchorHero = function() {
+      var el = this.container.find('.mz-content-last')[0];
+
+      el.addEventListener('click', function(e) {
+        var anchorTo = this.container.find('.mz-section--slider__combinar');
+
+        $('html,body').animate({
+          scrollTop: anchorTo.offset().top
+        }, 'slow');
+      }.bind(this), false);
   };
 
   Application.fn.sendSequest = function(email) {
@@ -60,8 +73,9 @@ App.Application = (function() {
 
               _.map(o.cores, function(o, i) {
                 if (o.estoque !== 0) {
+
                   item.produtoImage = o.imgUrl;
-                  item.productTitle = o.titulo;
+                  item.productTitle = (o.titulo === '' ? item.productName : o.titulo);
                   item.productPrice = o.preco_por;
                   item.productPriceWithOption = o.preco_de;
                   data.sectionProducts.push(item);
