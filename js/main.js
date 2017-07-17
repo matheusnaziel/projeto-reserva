@@ -116,8 +116,20 @@ App.Application = (function() {
           paginationClickable: true,
           nextButton: '.mz-bgSlider-next--categorias',
           prevButton: '.mz-bgSlider-prev--categorias',
-          loop: true,
-          spaceBetween: 30
+          loop: false,
+          spaceBetween: 30,
+          breakpoints: {
+            1280: {
+              slidesPerView: 4,
+              slidesPerGroup: 4,
+              spaceBetween: 30
+            },
+            1440: {
+              slidesPerView: 5,
+              slidesPerGroup: 5,
+              spaceBetween: 30
+            }
+          }
       });
   };
 
@@ -165,8 +177,20 @@ App.Application = (function() {
           paginationClickable: true,
           nextButton: '.mz-bgSlider-next--' + id,
           prevButton: '.mz-bgSlider-prev--' + id,
-          loop: true,
-          spaceBetween: 30
+          loop: false,
+          spaceBetween: 30,
+          breakpoints: {
+            1280: {
+              slidesPerView: 4,
+              slidesPerGroup: 4,
+              spaceBetween: 30
+            },
+            1440: {
+              slidesPerView: 5,
+              slidesPerGroup: 5,
+              spaceBetween: 30
+            }
+          }
       });
     });
   }

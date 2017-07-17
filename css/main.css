@@ -369,7 +369,7 @@
 .mz-slider--content__image-1 {
 	z-index: 0;
 	position: absolute;
-	opacity: 0;
+	display: none;
 	top: 0px;
 }
 
@@ -382,15 +382,16 @@
 
 .swiper-container--categorias .mz-slider--content__image a img {
 	/*position: absolute;*/
-
+	border: none;
 }
 .swiper-container--categorias .mz-slider--content__image a:hover .mz-slider--content__image-0 {
 	z-index: 0;
+	display: none;
 }
 
 .swiper-container--categorias .mz-slider--content__image a:hover .mz-slider--content__image-1 {
 	z-index: 1;
-	opacity: 1;
+	display: block;
 }
 
 .mz-text-3-left {
@@ -575,7 +576,9 @@
 	justify-content: center;
 	margin-top: 65px;
 }
-
+.swiper-slide a {
+	border: none;
+}
 .swiper-slide a:hover {
 	text-decoration: none;
 }
