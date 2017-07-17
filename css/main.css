@@ -336,6 +336,7 @@
 	left: 0 !important;
 	width: 60px !important;
 	height: 60px !important;
+	margin-top: -60px;
 }
 .swiper-button-prev::before, .swiper-container-rtl .swiper-button-prev {
 	content: "";
