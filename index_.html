@@ -746,9 +746,15 @@
             			</div>
             			<div class="mz-slider--content__description--bottom">
             				<span class="mz-atom--price">
-            					<span class="mz-atom--price__value">R$ {{ data.productPrice }}.00</span>
-	            				<span class="mz-atom--price__pipe">|</span>
-	            				<span class="mz-atom--price__desc">4x R$ {{ data.productPriceWithOption }}.00</span>
+
+            					<div v-if="data.productPrice === data.productPriceWithOption">
+												<span class="mz-atom--price__value">R$ {{ data.productPrice }}.00</span>
+            					</div>
+											<div v-else>
+												<span class="mz-atom--price__desc">De R$ {{ data.productPriceWithOption }}.00 por</span>
+												<span class="mz-atom--price__value"> R$ {{ data.productPrice }}.00</span>
+											</div>
+
             				</span>
             			</div>
             		</div>
@@ -795,9 +801,15 @@
 	            			</div>
 	            			<div class="mz-slider--content__description--bottom">
 	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ {{ data.productPrice }}.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ {{ data.productPriceWithOption }}.00</span>
+
+	            					<div v-if="data.productPrice === data.productPriceWithOption">
+													<span class="mz-atom--price__value">R$ {{ data.productPrice }}.00</span>
+	            					</div>
+												<div v-else>
+													<span class="mz-atom--price__desc">De R$ {{ data.productPriceWithOption }}.00 por</span>
+													<span class="mz-atom--price__value"> R$ {{ data.productPrice }}.00</span>
+												</div>
+
 	            				</span>
 	            			</div>
 	            		</div>
@@ -961,9 +973,15 @@
 	            			</div>
 	            			<div class="mz-slider--content__description--bottom">
 	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ {{ data.productPrice }}.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ {{ data.productPriceWithOption }}.00</span>
+
+	            					<div v-if="data.productPrice === data.productPriceWithOption">
+													<span class="mz-atom--price__value">R$ {{ data.productPrice }}.00</span>
+	            					</div>
+												<div v-else>
+													<span class="mz-atom--price__desc">De R$ {{ data.productPriceWithOption }}.00 por</span>
+													<span class="mz-atom--price__value"> R$ {{ data.productPrice }}.00</span>
+												</div>
+
 	            				</span>
 	            			</div>
 	            		</div>
@@ -1013,9 +1031,13 @@
 								</div>
 								<div class="mz-slider--content__description--bottom">
 									<span class="mz-atom--price">
-									<span class="mz-atom--price__value">R$ {{ data.productPrice }}.00</span>
-									<span class="mz-atom--price__pipe">|</span>
-									<span class="mz-atom--price__desc">4x R$ {{ data.productPriceWithOption }}.00</span>
+										<div v-if="data.productPrice === data.productPriceWithOption">
+											<span class="mz-atom--price__value">R$ {{ data.productPrice }}.00</span>
+          					</div>
+										<div v-else>
+											<span class="mz-atom--price__desc">De R$ {{ data.productPriceWithOption }}.00 por</span>
+											<span class="mz-atom--price__value"> R$ {{ data.productPrice }}.00</span>
+										</div>
 									</span>
 								</div>
 							</div>
