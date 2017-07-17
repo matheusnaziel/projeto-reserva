@@ -111,6 +111,8 @@ App.Application = (function() {
   Application.fn.initSliderCategory = function() {
       new Swiper('.swiper-container--categorias', {
           slidesPerView: 6,
+          slidesPerGroup: 6,
+          speed: 1000,     
           paginationClickable: true,
           nextButton: '.mz-bgSlider-next--categorias',
           prevButton: '.mz-bgSlider-prev--categorias',
@@ -158,6 +160,8 @@ App.Application = (function() {
 
       new Swiper('.swiper-container--' + id, {
           slidesPerView: 6,
+          slidesPerGroup: 6,
+          speed: 1000,
           paginationClickable: true,
           nextButton: '.mz-bgSlider-next--' + id,
           prevButton: '.mz-bgSlider-prev--' + id,

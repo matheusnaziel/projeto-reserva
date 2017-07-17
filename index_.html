@@ -726,8 +726,8 @@
 		</div>
 	</div>
 	<div class="mz-slider--wrapper">
-		<span class="mz-bgSlider-next mz-bgSlider-next--combinar"></span>
-    <span class="mz-bgSlider-prev mz-bgSlider-next--combinar"></span>
+		<span class="mz-bgSlider-next mz-bgSlider-next--combinar swiper-button-next"></span>
+    <span class="mz-bgSlider-prev mz-bgSlider-prev--combinar swiper-button-prev"></span>
 
 		<div class="swiper-container swiper-container--combinar">
       	<div class="swiper-wrapper">
@@ -758,9 +758,6 @@
 
       	</div>
     </div>
-
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
 	</div>
 </section>
 
@@ -779,8 +776,8 @@
 		</div>
 	</div>
 	<div class="mz-slider--wrapper">
-		<span class="mz-bgSlider-next mz-bgSlider-next--ultimos"></span>
-	    <span class="mz-bgSlider-prev mz-bgSlider-prev--ultimos"></span>
+		<span class="mz-bgSlider-next mz-bgSlider-next--ultimos swiper-button-next"></span>
+	   <span class="mz-bgSlider-prev mz-bgSlider-prev--ultimos swiper-button-prev"></span>
 
 
 		<div class="swiper-container swiper-container--ultimos">
@@ -810,9 +807,6 @@
 
         	</div>
         </div>
-
-	    <div class="swiper-button-next"></div>
-	    <div class="swiper-button-prev"></div>
 	</div>
 </section>
 
@@ -947,8 +941,9 @@
 		</div>
 	</div>
 	<div class="mz-slider--wrapper">
-		<span class="mz-bgSlider-next mz-bgSlider-next--polos"></span>
-	    <span class="mz-bgSlider-prev mz-bgSlider-prev--polos"></span>
+
+		<span class="mz-bgSlider-next mz-bgSlider-next--polos swiper-button-next"></span>
+	  <span class="mz-bgSlider-prev mz-bgSlider-prev--polos swiper-button-prev"></span>
 
 
 		<div class="swiper-container swiper-container--polos">
@@ -979,8 +974,7 @@
         	</div>
         </div>
 
-	    <div class="swiper-button-next"></div>
-	    <div class="swiper-button-prev"></div>
+	    
 	</div>
 </section>
 
@@ -998,41 +992,40 @@
 			</div>
 		</div>
 	</div>
-	<div class="mz-slider--wrapper">
-		<span class="mz-bgSlider-next mz-bgSlider-next--camisetas"></span>
-	    <span class="mz-bgSlider-prev mz-bgSlider-prev--camisetas"></span>
 
+	<div class="mz-slider--wrapper">
+
+		<span class="mz-bgSlider-next mz-bgSlider-next--camisetas swiper-button-next"></span>
+	  <span class="mz-bgSlider-prev mz-bgSlider-prev--camisetas swiper-button-prev"></span>
 
 		<div class="swiper-container swiper-container--camisetas">
-        	<div class="swiper-wrapper">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide" v-for="data in section">
 
-        		<div class="swiper-slide" v-for="data in section">
-            	<a :href="data.productUrl">
-	            	<div class="mz-slider--content">
-	            		<div class="mz-slider--content__image">
-	            			<img :src="data.produtoImage"/>
-	            		</div>
-	            		<div class="mz-slider--content__description">
-	            			<div class="mz-slider--content__description--top">
-	            				<h5>{{ data.productTitle }}</h5>
-	            			</div>
-	            			<div class="mz-slider--content__description--bottom">
-	            				<span class="mz-atom--price">
-	            					<span class="mz-atom--price__value">R$ {{ data.productPrice }}.00</span>
-		            				<span class="mz-atom--price__pipe">|</span>
-		            				<span class="mz-atom--price__desc">4x R$ {{ data.productPriceWithOption }}.00</span>
-	            				</span>
-	            			</div>
-	            		</div>
-	            	</div>
-	    				</a>
-            </div>
+					<a :href="data.productUrl">
+						<div class="mz-slider--content">
+							<div class="mz-slider--content__image">
+								<img :src="data.produtoImage"/>
+							</div>
+							<div class="mz-slider--content__description">
+								<div class="mz-slider--content__description--top">
+									<h5>{{ data.productTitle }}</h5>
+								</div>
+								<div class="mz-slider--content__description--bottom">
+									<span class="mz-atom--price">
+									<span class="mz-atom--price__value">R$ {{ data.productPrice }}.00</span>
+									<span class="mz-atom--price__pipe">|</span>
+									<span class="mz-atom--price__desc">4x R$ {{ data.productPriceWithOption }}.00</span>
+									</span>
+								</div>
+							</div>
+						</div>
+					</a>
 
-        	</div>
-        </div>
+				</div>
+			</div>
+		</div>
 
-	    <div class="swiper-button-next"></div>
-	    <div class="swiper-button-prev"></div>
 	</div>
 </section>
 
