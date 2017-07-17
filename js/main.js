@@ -58,7 +58,7 @@ App.Application = (function() {
 
             data.sectionPosition = o.rank;
             data.sectionTitle = o.nome;
-            data.sectionUrl = 'https://www.usereserva.com/usereserva/c/masculino/' + o.nome;
+            data.sectionUrl = 'https://www.usereserva.com/' + o.nome;
             data.sectionProducts = [];
 
             var filteredIsEstoque = _.filter(o.produtos, function(o) {
