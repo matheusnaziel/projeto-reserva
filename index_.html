@@ -747,13 +747,20 @@
             			<div class="mz-slider--content__description--bottom">
             				<span class="mz-atom--price">
 
-            					<div v-if="data.productPrice === data.productPriceWithOption">
+            					<span v-if="data.productPrice === data.productPriceWithOption">
 												<span class="mz-atom--price__value">R$ {{ data.productPrice }}.00</span>
-            					</div>
-											<div v-else>
+            					</span>
+											<span v-else>
 												<span class="mz-atom--price__desc">De R$ {{ data.productPriceWithOption }}.00 por</span>
 												<span class="mz-atom--price__value"> R$ {{ data.productPrice }}.00</span>
-											</div>
+											</span>
+
+											<span v-if="(data.productPrice / 60) >= 2">
+												<span class="mz-atom--price__desc">
+	                      	<br />{{ ( data.productPrice / 60 ).toFixed() }}X de R$ {{ ( (data.productPrice) / ( (data.productPrice / 60).toFixed() ) ).toFixed(2) }}
+	                      </span>
+                      </span>
+                      <span v-else></span>
 
             				</span>
             			</div>
@@ -802,13 +809,20 @@
 	            			<div class="mz-slider--content__description--bottom">
 	            				<span class="mz-atom--price">
 
-	            					<div v-if="data.productPrice === data.productPriceWithOption">
+	            					<span v-if="data.productPrice === data.productPriceWithOption">
 													<span class="mz-atom--price__value">R$ {{ data.productPrice }}.00</span>
-	            					</div>
-												<div v-else>
+	            					</span>
+												<span v-else>
 													<span class="mz-atom--price__desc">De R$ {{ data.productPriceWithOption }}.00 por</span>
 													<span class="mz-atom--price__value"> R$ {{ data.productPrice }}.00</span>
-												</div>
+												</span>
+
+												<span v-if="(data.productPrice / 60) >= 2">
+													<span class="mz-atom--price__desc">
+		                      	<br />{{ ( data.productPrice / 60 ).toFixed() }}X de R$ {{ ( (data.productPrice) / ( (data.productPrice / 60).toFixed() ) ).toFixed(2) }}
+		                      </span>
+	                      </span>
+	                      <span v-else></span>
 
 	            				</span>
 	            			</div>
@@ -974,13 +988,20 @@
 	            			<div class="mz-slider--content__description--bottom">
 	            				<span class="mz-atom--price">
 
-	            					<div v-if="data.productPrice === data.productPriceWithOption">
+	            					<span v-if="data.productPrice === data.productPriceWithOption">
 													<span class="mz-atom--price__value">R$ {{ data.productPrice }}.00</span>
-	            					</div>
-												<div v-else>
+	            					</span>
+												<span v-else>
 													<span class="mz-atom--price__desc">De R$ {{ data.productPriceWithOption }}.00 por</span>
 													<span class="mz-atom--price__value"> R$ {{ data.productPrice }}.00</span>
-												</div>
+												</span>
+
+												<span v-if="(data.productPrice / 60) >= 2">
+													<span class="mz-atom--price__desc">
+		                      	<br />{{ ( data.productPrice / 60 ).toFixed() }}X de R$ {{ ( (data.productPrice) / ( (data.productPrice / 60).toFixed() ) ).toFixed(2) }}
+		                      </span>
+	                      </span>
+	                      <span v-else></span>
 
 	            				</span>
 	            			</div>
@@ -1031,13 +1052,22 @@
 								</div>
 								<div class="mz-slider--content__description--bottom">
 									<span class="mz-atom--price">
-										<div v-if="data.productPrice === data.productPriceWithOption">
+
+										<span v-if="data.productPrice === data.productPriceWithOption">
 											<span class="mz-atom--price__value">R$ {{ data.productPrice }}.00</span>
-          					</div>
-										<div v-else>
+          					</span>
+										<span v-else>
 											<span class="mz-atom--price__desc">De R$ {{ data.productPriceWithOption }}.00 por</span>
 											<span class="mz-atom--price__value"> R$ {{ data.productPrice }}.00</span>
-										</div>
+										</span>
+
+										<span v-if="(data.productPrice / 60) >= 2">
+											<span class="mz-atom--price__desc">
+                      	<br />{{ ( data.productPrice / 60 ).toFixed() }}X de R$ {{ ( (data.productPrice) / ( (data.productPrice / 60).toFixed() ) ).toFixed(2) }}
+                      </span>
+                    </span>
+                    <span v-else></span>
+										
 									</span>
 								</div>
 							</div>

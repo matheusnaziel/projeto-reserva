@@ -472,6 +472,7 @@
 
 .mz-slider--content__description--bottom {
 	text-align: center;
+	line-height: 1.5em;
 }
 
 .mz-atom--price {
@@ -578,6 +579,7 @@
 }
 .swiper-slide a {
 	border: none;
+	color: none;
 }
 .swiper-slide a:hover {
 	text-decoration: none;
