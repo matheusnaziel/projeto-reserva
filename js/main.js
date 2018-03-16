@@ -53,6 +53,8 @@ App.Application = (function() {
         if (this.status == 200) {
           var response = JSON.parse(xhttp.responseText);
 
+          console.log(response.recs);
+
           _.map(response.recs, function(o, i){
             var data = {};
 
