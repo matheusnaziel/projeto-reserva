@@ -16,7 +16,7 @@
 
 .mz-section-0 {
 	background-color: purple;
-	background-image: url('../_svgs/gradient-background.svg');
+	background-image: url('../svgs/gradient-background.svg');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -65,7 +65,7 @@
 }
 
 .mz-content-last p:after {
-	content: url('../_svgs/arrow-down.svg');
+	content: url('../svgs/arrow-down.svg');
 	display: block;
 	width: 20px;
 	height: 14px;
@@ -102,24 +102,24 @@
 }
 
 .mz-icon-caminhao:after {
-	content: url(../_svgs/icon-frete.svg);
+	content: url(../svgs/icon-frete.svg);
 
 }
 
 .mz-icon-bike:after {
-	content: url(../_svgs/icon-entrega-verde.svg);
+	content: url(../svgs/icon-entrega-verde.svg);
 }
 
 .mz-icon-reload:after {
-	content: url(../_svgs/icon-troca.svg);
+	content: url(../svgs/icon-troca.svg);
 }
 
 .mz-icon-cubos:after {
-	content: url(../_svgs/icon-produtos-exclusivos.svg);
+	content: url(../svgs/icon-produtos-exclusivos.svg);
 }
 
 .mz-icon-entrega:after {
-	content: url(../_svgs/icon-entrega-internacional.svg);
+	content: url(../svgs/icon-entrega-internacional.svg);
 }
 
 .mz-content-other {
